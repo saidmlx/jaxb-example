@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<bindings xmlns="http://java.sun.com/xml/ns/jaxb" if-exists="true" version="2.1">
+  <!--
+
+Este archivo ha sido generado por la arquitectura JavaTM para la implantación de la referencia de enlace (JAXB) XML v2.3.0 
+Visite <a href="https://javaee.github.io/jaxb-v2/">https://javaee.github.io/jaxb-v2/</a> 
+Todas las modificaciones realizadas en este archivo se perderán si se vuelve a compilar el esquema de origen. 
+Generado el: 2018.07.28 a las 02:00:55 AM CDT 
+
+  -->
+  <bindings xmlns:tns="http://www.saidmlx.online/database/northwind/products" if-exists="true" scd="x-schema::tns">
+    <schemaBindings map="false">
+      <package name="online.saidmlx.database.northwind.products"/>
+    </schemaBindings>
+    <bindings if-exists="true" scd="~tns:ProductRequest">
+      <class ref="online.saidmlx.database.northwind.products.ProductRequest"/>
+    </bindings>
+    <bindings if-exists="true" scd="~tns:ProductResponse">
+      <class ref="online.saidmlx.database.northwind.products.ProductResponse"/>
+    </bindings>
+  </bindings>
+</bindings>

@@ -13,6 +13,26 @@ En el proyecto tenemos un XSD donde definimos el esquema y lo que vamos hacer es
 Una vez cloando el recurso
 
 ```terminal
-mvn clean
+mvn generate-sources
 ``
 y veremos que se crea el paquete con todo el modelo de objetos de Java
+
+```java
+src/main/generated/
+├── META-INF
+│   └── sun-jaxb.episode
+├── online
+│   └── saidmlx
+│       └── database
+│           └── northwind
+│               └── products
+│                   ├── ObjectFactory.java
+│                   ├── ProductRequest.java
+│                   ├── ProductResponse.java
+│                   └── package-info.java
+└── org
+    └── w3
+        └── _2001
+            └── xmlschema
+                └── Adapter1.java
+``

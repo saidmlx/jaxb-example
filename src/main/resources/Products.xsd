@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
     targetNamespace="http://www.saidmlx.online/database/northwind/products"
-    xmlns:empns="http://www.saidmlx.online/database/northwind/products"
+    xmlns:saidmlx="http://www.saidmlx.online/database/northwind/products"
     elementFormDefault="qualified">
  
-    <element name="productRequest" type="empns:ProductRequest"></element>
-    <element name="productResponse" type="empns:ProductResponse"></element>
+    <element name="products" type="saidmlx:Products"></element>
+    
  
-    <complexType name="ProductRequest">
-        <sequence>
-            <element name="product_id" 		type="int" 		minOccurs="0" maxOccurs="1" />
-            <element name="product_name" 	type="string" 	minOccurs="0" maxOccurs="1" />
-        </sequence>
-    </complexType>
+    
      
-    <complexType name="ProductResponse">
+    <complexType name="Products">
         <sequence>
-            <element name="product_id" 		type="int" 		minOccurs="1" maxOccurs="1" />
             <element name="product_name" 	type="string" 	minOccurs="1" maxOccurs="1" />
             <element name="supplier_id" 	type="int" 		minOccurs="1" maxOccurs="1" />
-            <element name="category_id" 	type="int" 		minOccurs="1" maxOccurs="1" />
+            <element name="category" type="saidmlx:Categories" 	minOccurs="1" maxOccurs="1" />
             <element name="quantity_per_unit" type="string" minOccurs="1" maxOccurs="1" />
             <element name="unit_price" 		type="float" 	minOccurs="1" maxOccurs="1" />
             <element name="units_in_stock" 	type="int" 		minOccurs="1" maxOccurs="1" />
@@ -27,6 +21,22 @@
             <element name="reorder_level" 	type="int" 		minOccurs="1" maxOccurs="1" />
             <element name="discontinued" 	type="int" 		minOccurs="1" maxOccurs="1" />
         </sequence>
+        <attribute name="product_id" type="saidmlx:ID"></attribute>
     </complexType>
+    
+    <simpleType name="ID">
+		<restriction base="int">
+			<pattern value="[0-9]*"></pattern>
+		</restriction>
+	</simpleType>
+	<complexType name="Categories">
+		<all>
+			<element name="category_id" type="int" />
+			<element name="category_name" type="string" />
+			<element name="description" type="string" />
+			
+		</all>
+	</complexType>
+	
  
 </schema>
